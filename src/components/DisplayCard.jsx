@@ -44,7 +44,7 @@ export const Project01Card = ({ id }) => {
       </div>
       <div className="pt-4 flex flex-col gap-y-3">
         <h3 className=" text-white text-center text-xl font-bold bg-zinc-600 px-5 py-2 rounded-xl mx-auto">
-          Original Name{" "}
+          Original Name
           <span className="text-black bg-zinc-100 px-3 py-1 rounded-lg ml-2">
             Clark Kent
           </span>
