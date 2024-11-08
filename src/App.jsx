@@ -34,7 +34,7 @@ function App() {
     <>
       {showModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm">
             <button
               className="block ml-auto text-red-500 hover:text-gray-200 bg-gray-200 hover:bg-red-500 px-2 rounded-full"
               onClick={closeModal}
