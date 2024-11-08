@@ -15,7 +15,7 @@ const Header = () => {
         supervillains, and natural disasters.
       </p>
       <h1 className="text-4xl text-center mx-auto mt-5 font-semibold">
-        Core Members of the Justice League
+        Scroll to explore the Core Members of the Justice League
       </h1>
 
       <h1 className="text-6xl text-center">&darr;</h1>
