@@ -1,7 +1,6 @@
 import React from "react";
 import justiceLeague from "../assets/justiceLeague.png";
 import dc from "../assets/dc.png";
-
 const Header = () => {
   return (
     <div>

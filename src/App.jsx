@@ -1,4 +1,5 @@
 import "./App.css";
+import EditableList from "./components/EditableList";
 import Footer from "./pages/Footer";
 import Header from "./pages/Header";
 import ProjectsList from "./pages/ProjectsList";
@@ -33,7 +34,7 @@ function App() {
   return (
     <>
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-1/2 -mt-80 md:mt-0 -ml-40 md:ml-0">
             <button
               className="block ml-auto text-red-500 hover:text-gray-200 bg-gray-200 hover:bg-red-500 px-2 rounded-full"
@@ -71,6 +72,7 @@ function App() {
       )}
       <Header />
       <ProjectsList />
+      <EditableList/>
       <Footer />
     </>
   );
