@@ -5,6 +5,7 @@ import Header from "./pages/Header";
 import ProjectsList from "./pages/ProjectsList";
 
 import { useEffect, useRef, useState } from "react";
+import WallpapersList from "./pages/WallpapersList";
 
 function App() {
   const hasAlerted = useRef(false);
@@ -72,7 +73,8 @@ function App() {
       )}
       <Header />
       <ProjectsList />
-      <EditableList/>
+      <EditableList />
+      <WallpapersList/>
       <Footer />
     </>
   );

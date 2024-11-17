@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import classNames from "classnames";
 import { useProjectStore } from "./ProjectStore";
 import superMan from "../assets/superman.jpg";
@@ -7,10 +8,61 @@ import flash from "../assets/flash.jpg";
 import aquaMan from "../assets/aquaman.jpg";
 import greenLantern from "../assets/greenlantern.jpg";
 
-const DisplayCard = ({ bgColor, children, id }) => {
-  const inViewProject = useProjectStore((state) => state.inViewProject);
+import supermanTheme from "../assets/superman.mp3";
+import batmanTheme from "../assets/batman.mp3";
+import wonderwomanTheme from "../assets/wonderwoman.mp3";
+import flashTheme from "../assets/flash.mp3";
+import aquamanTheme from "../assets/aquaman.mp3";
+import greenlanternTheme from "../assets/greenlantern.mp3";
+
+const DisplayCard = ({ bgColor, children, id, audioSrc }) => {
+  // const inViewProject = useProjectStore((state) => state.inViewProject);
+  const { inViewProject, setInViewProject } = useProjectStore();
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+
+    const handlePlayAudio = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setInViewProject(id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handlePlayAudio, options);
+    const cardElement = document.getElementById(id);
+
+    if (cardElement) {
+      observer.observe(cardElement);
+    }
+
+    return () => {
+      if (cardElement) {
+        observer.unobserve(cardElement);
+      }
+    };
+  }, [id, setInViewProject]);
+
+  useEffect(() => {
+    if (inViewProject === id) {
+      audioRef.current.play().catch((error) => {
+        console.error('Failed to play the audio:', error);
+      });
+    } else {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+  }, [inViewProject, id]);
+
   return (
     <div
+      id={id}
       className={classNames(
         "h-full w-full rounded-2xl absolute inset-0 transition-opacity p-5",
         bgColor,
@@ -18,13 +70,14 @@ const DisplayCard = ({ bgColor, children, id }) => {
       )}
     >
       {children}
+      <audio ref={audioRef} src={audioSrc} preload="auto" style={{ display: 'none' }} />
     </div>
   );
 };
 
 export const Project01Card = ({ id }) => {
   return (
-    <DisplayCard id={id} bgColor="bg-red-500">
+    <DisplayCard id={id} bgColor="bg-red-500" audioSrc={supermanTheme}>
       <div className="relative flex justify-evenly h-80">
         <img
           src={superMan}
@@ -60,7 +113,7 @@ export const Project01Card = ({ id }) => {
 
 export const Project02Card = ({ id }) => {
   return (
-    <DisplayCard id={id} bgColor="bg-zinc-800">
+    <DisplayCard id={id} bgColor="bg-zinc-800" audioSrc={batmanTheme}>
       <div className="relative flex justify-evenly h-80">
         <img
           src={batMan}
@@ -96,7 +149,7 @@ export const Project02Card = ({ id }) => {
 
 export const Project03Card = ({ id }) => {
   return (
-    <DisplayCard id={id} bgColor="bg-sky-800">
+    <DisplayCard id={id} bgColor="bg-sky-800" audioSrc={wonderwomanTheme}>
       <div className="relative flex justify-evenly h-80">
         <img
           src={wonderWoman}
@@ -132,7 +185,7 @@ export const Project03Card = ({ id }) => {
 
 export const Project04Card = ({ id }) => {
   return (
-    <DisplayCard id={id} bgColor="bg-amber-500">
+    <DisplayCard id={id} bgColor="bg-amber-500" audioSrc={flashTheme}>
       <div className="relative flex justify-evenly h-80">
         <img
           src={flash}
@@ -167,7 +220,7 @@ export const Project04Card = ({ id }) => {
 
 export const Project05Card = ({ id }) => {
   return (
-    <DisplayCard id={id} bgColor="bg-green-500">
+    <DisplayCard id={id} bgColor="bg-green-500" audioSrc={greenlanternTheme}>
       <div className="relative flex justify-evenly h-80">
         <img
           src={greenLantern}
@@ -203,7 +256,7 @@ export const Project05Card = ({ id }) => {
 
 export const Project06Card = ({ id }) => {
   return (
-    <DisplayCard id={id} bgColor="bg-blue-500">
+    <DisplayCard id={id} bgColor="bg-blue-500" audioSrc={aquamanTheme}>
       <div className="relative flex justify-evenly h-80">
         <img
           src={aquaMan}

@@ -15,6 +15,8 @@ import {
   Project05Card,
   Project06Card,
 } from "../components/DisplayCard";
+
+// import { Project01Card, Project02Card, Project03Card } from "../components/DisCard";
 import superman from "../assets/supermanFlying.png";
 
 const projects = [
