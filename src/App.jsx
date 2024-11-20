@@ -45,11 +45,11 @@ function App() {
               &times;
             </button>
             <div className="text-center">
-              <h4>👋 Hi! I'm Ajithkumar, the developer of this webpage.</h4>
+              <h4>👋 Hi! I'm Ajithkumar, the developer of this website.</h4>
               <p>
-                For the best experience,{" "}
+                For the best experience,
                 <span className="text-blue-500 font-semibold">
-                  I recommend visiting this webpage on a desktop screen.
+                  I recommend visiting this website on a desktop screen with volume turned up.
                 </span>
               </p>
               <p>Thanks for visiting and understanding!</p>

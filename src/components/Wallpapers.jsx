@@ -30,25 +30,35 @@ const Wallpapers = () => {
     }
   };
 
+  const arrayBufferToBase64 = (buffer) => {
+    let binary = "";
+    const bytes = new Uint8Array(buffer);
+    const len = bytes.byteLength;
+    for (let i = 0; i < len; i++) {
+      binary += String.fromCharCode(bytes[i]);
+    }
+    return window.btoa(binary);
+  };
+
   return (
     <div>
-      <h1>Superhero Wallpapers</h1>
+      <h1 className="text-4xl text-center mx-auto mt-5 font-semibold">Superhero Wallpapers</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 w-[90%] ml-auto mr-auto">
         {images.map((image) => (
           <div
             key={image._id}
-            className="border rounded overflow-hidden shadow-lg"
+            className="border rounded overflow-hidden shadow-lg p-3 bg-zinc-400"
           >
             <img
-              className="w-full h-auto"
-              src={`https://images-mongo-db.vercel.app/uploads/${image.image}`}
+              className="w-full h-96 object-cover"
+              src={`data:image/jpeg;base64,${arrayBufferToBase64(image.image.data)}`}
               alt={image.name}
             />
             <button
-              className="mt-2 px-4 py-2 bg-blue-500 text-white rounded block mx-auto"
+              className="mt-2 px-4 py-2 bg-blue-600 text-white rounded block mx-auto"
               onClick={() =>
                 handleDownload(
-                  `https://images-mongo-db.vercel.app/uploads/${image.image}`,
+                  `data:image/jpeg;base64,${arrayBufferToBase64(image.image.data)}`,
                   `${image.name}.jpeg`
                 )
               }
