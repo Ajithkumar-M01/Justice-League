@@ -13,7 +13,7 @@ const WallpaperForm = () => {
     const formData = new FormData();
     formData.append("image", image);
 
-    const result = await axios.post("http://localhost:3003/upload", formData, {
+    const result = await axios.post("https://images-mongo-db.vercel.app//upload", formData, {
       headers: { "Content-Type": "multipart/form-data" },
     });
   };
@@ -25,7 +25,7 @@ const WallpaperForm = () => {
 
   const handleFileFetch = async () => {
     try {
-      const result = await axios.get("http://localhost:3003/get-image");
+      const result = await axios.get("https://images-mongo-db.vercel.app//get-image");
       console.log(result);
       setAllImages(result.data.data);
     } catch (error) {
