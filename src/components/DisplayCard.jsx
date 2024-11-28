@@ -64,7 +64,7 @@ const DisplayCard = ({ bgColor, children, id, audioSrc }) => {
     <div
       id={id}
       className={classNames(
-        "h-full w-full rounded-2xl absolute inset-0 transition-opacity p-5",
+        "h-full w-40 sm:w-full rounded-2xl absolute inset-0 transition-opacity p-5",
         bgColor,
         inViewProject === id ? "opacity-100" : "opacity-0"
       )}
@@ -77,14 +77,14 @@ const DisplayCard = ({ bgColor, children, id, audioSrc }) => {
 
 export const Project01Card = ({ id }) => {
   return (
-    <DisplayCard id={id} bgColor="bg-red-500" audioSrc={supermanTheme}>
+    <DisplayCard id={id} bgColor="sm:bg-red-500" audioSrc={supermanTheme}>
       <div className="relative flex justify-evenly h-80">
         <img
           src={superMan}
           alt="pokemon website"
           className="absolute rounded-lg w-52 border-8 border-sky-600 z-10 -ml-40"
         />
-        <div className="absolute text-center mt-20 bg-sky-700 pl-60 py-2 rounded-xl z-0">
+        <div className="absolute text-center mt-20 bg-sky-700 pl-60 py-2 rounded-xl z-0 hidden sm:block">
           <h3 className="text-xl font-bold">Abilities</h3>
           <div className="text-white w-52">
             <p>Super Strength</p>
@@ -96,13 +96,13 @@ export const Project01Card = ({ id }) => {
         </div>
       </div>
       <div className="pt-4 flex flex-col gap-y-3">
-        <h3 className=" text-white text-center text-xl font-bold bg-zinc-600 px-5 py-2 rounded-xl mx-auto">
+        <h3 className=" text-white text-center text-xl font-bold bg-zinc-600 px-5 py-2 rounded-xl mx-auto hidden sm:block">
           Original Name
           <span className="text-black bg-zinc-100 px-3 py-1 rounded-lg ml-2">
             Clark Kent
           </span>
         </h3>
-        <p className="text-center text-base bg-red-300 px-2 py-5 rounded-xl">
+        <p className="text-center text-base bg-red-300 px-2 py-5 rounded-xl hidden sm:block">
           The iconic Man of Steel with superhuman strength, flight, and other
           powers. A symbol of hope and justice.
         </p>
@@ -113,14 +113,14 @@ export const Project01Card = ({ id }) => {
 
 export const Project02Card = ({ id }) => {
   return (
-    <DisplayCard id={id} bgColor="bg-zinc-800" audioSrc={batmanTheme}>
+    <DisplayCard id={id} bgColor="sm:bg-zinc-800" audioSrc={batmanTheme}>
       <div className="relative flex justify-evenly h-80">
         <img
           src={batMan}
           alt="pokemon website"
           className="absolute rounded-lg w-52 border-8 border-yellow-500 z-10 -ml-40"
         />
-        <div className="absolute text-center mt-20 bg-yellow-600 pl-60  py-2 rounded-xl z-0">
+        <div className="absolute text-center mt-20 bg-yellow-600 pl-60  py-2 rounded-xl z-0 hidden sm:block">
           <h3 className="text-xl font-bold">Abilities</h3>
           <div className="text-white w-52">
             <p>Master Detective</p>
@@ -132,13 +132,13 @@ export const Project02Card = ({ id }) => {
         </div>
       </div>
       <div className="pt-4 flex flex-col gap-y-3">
-        <h3 className=" text-white text-center text-xl font-bold bg-zinc-600 px-5 py-2 rounded-xl mx-auto">
+        <h3 className=" text-white text-center text-xl font-bold bg-zinc-600 px-5 py-2 rounded-xl mx-auto hidden sm:block">
           Original Name
           <span className="text-black bg-zinc-100 px-3 py-1 rounded-lg ml-2">
             Bruce Wayne
           </span>
         </h3>
-        <p className="text-center text-base bg-zinc-400 px-2 py-5 rounded-xl">
+        <p className="text-center text-base bg-zinc-400 px-2 py-5 rounded-xl hidden sm:block">
           The Dark Knight, a master detective and martial artist who fights
           crime in Gotham City.
         </p>
@@ -149,14 +149,14 @@ export const Project02Card = ({ id }) => {
 
 export const Project03Card = ({ id }) => {
   return (
-    <DisplayCard id={id} bgColor="bg-sky-800" audioSrc={wonderwomanTheme}>
+    <DisplayCard id={id} bgColor="sm:bg-sky-800" audioSrc={wonderwomanTheme}>
       <div className="relative flex justify-evenly h-80">
         <img
           src={wonderWoman}
           alt="pokemon website"
           className="absolute rounded-lg w-52 border-8 border-red-500 z-10 -ml-40"
         />
-        <div className="absolute text-center mt-20 bg-red-600 pl-60 py-2 rounded-xl z-0">
+        <div className="absolute text-center mt-20 bg-red-600 pl-60 py-2 rounded-xl z-0 hidden sm:block">
           <h3 className="text-xl font-bold">Abilities</h3>
           <div className="text-white w-52">
             <p>Super Strength</p>
@@ -168,13 +168,13 @@ export const Project03Card = ({ id }) => {
         </div>
       </div>
       <div className="pt-4 flex flex-col gap-y-3">
-        <h3 className=" text-white text-center text-xl font-bold bg-zinc-600 px-5 py-2 rounded-xl mx-auto">
+        <h3 className=" text-white text-center text-xl font-bold bg-zinc-600 px-5 py-2 rounded-xl mx-auto hidden sm:block">
           Original Name
           <span className="text-black bg-zinc-100 px-3 py-1 rounded-lg ml-2">
             Diana Prince
           </span>
         </h3>
-        <p className="text-center text-base bg-sky-300 px-2 py-5 rounded-xl">
+        <p className="text-center text-base bg-sky-300 px-2 py-5 rounded-xl hidden sm:block">
           An Amazonian warrior princess with incredible strength and combat
           skills.
         </p>
@@ -185,14 +185,14 @@ export const Project03Card = ({ id }) => {
 
 export const Project04Card = ({ id }) => {
   return (
-    <DisplayCard id={id} bgColor="bg-amber-500" audioSrc={flashTheme}>
+    <DisplayCard id={id} bgColor="sm:bg-amber-500" audioSrc={flashTheme}>
       <div className="relative flex justify-evenly h-80">
         <img
           src={flash}
           alt="pokemon website"
           className="absolute rounded-lg w-52 border-8 border-sky-600 z-10 -ml-40"
         />
-        <div className="absolute text-center mt-20 bg-sky-700 pl-60 py-2 rounded-xl z-0">
+        <div className="absolute text-center mt-20 bg-sky-700 pl-60 py-2 rounded-xl z-0 hidden sm:block">
           <h3 className="text-xl font-bold">Abilities</h3>
           <div className="text-white w-52">
             <p> Super Speed</p>
@@ -204,13 +204,13 @@ export const Project04Card = ({ id }) => {
         </div>
       </div>
       <div className="pt-4 flex flex-col gap-y-3">
-        <h3 className=" text-white text-center text-xl font-bold bg-zinc-600 px-5 py-2 rounded-xl mx-auto">
+        <h3 className=" text-white text-center text-xl font-bold bg-zinc-600 px-5 py-2 rounded-xl mx-auto hidden sm:block">
           Original Name
           <span className="text-black bg-zinc-100 px-3 py-1 rounded-lg ml-2">
             Barry Allen
           </span>
         </h3>
-        <p className="text-center text-base bg-amber-200 px-2 py-5 rounded-xl">
+        <p className="text-center text-base bg-amber-200 px-2 py-5 rounded-xl hidden sm:block">
           The fastest man alive, with the ability to move at superhuman speeds.
         </p>
       </div>
@@ -220,14 +220,14 @@ export const Project04Card = ({ id }) => {
 
 export const Project05Card = ({ id }) => {
   return (
-    <DisplayCard id={id} bgColor="bg-green-500" audioSrc={greenlanternTheme}>
+    <DisplayCard id={id} bgColor="sm:bg-green-500" audioSrc={greenlanternTheme}>
       <div className="relative flex justify-evenly h-80">
         <img
           src={greenLantern}
           alt="pokemon website"
           className="absolute rounded-lg w-52 border-8 border-teal-700 z-10 -ml-40"
         />
-        <div className="absolute text-center mt-20 bg-teal-800 pl-60 py-2 rounded-xl z-0">
+        <div className="absolute text-center mt-20 bg-teal-800 pl-60 py-2 rounded-xl z-0 hidden sm:block">
           <h3 className="text-xl font-bold">Abilities</h3>
           <div className="text-white w-52">
             <p> Power Ring</p>
@@ -239,13 +239,13 @@ export const Project05Card = ({ id }) => {
         </div>
       </div>
       <div className="pt-4 flex flex-col gap-y-3">
-        <h3 className=" text-white text-center text-xl font-bold bg-zinc-600 px-5 py-2 rounded-xl mx-auto">
+        <h3 className=" text-white text-center text-xl font-bold bg-zinc-600 px-5 py-2 rounded-xl mx-auto hidden sm:block">
           Original Name
           <span className="text-black bg-zinc-100 px-3 py-1 rounded-lg ml-2">
             Hal Jordan
           </span>
         </h3>
-        <p className="text-center text-base bg-green-200 px-2 py-5 rounded-xl">
+        <p className="text-center text-base bg-green-200 px-2 py-5 rounded-xl hidden sm:block">
           A member of the Green Lantern Corps, wielding a power ring that can
           create constructs based on willpower.
         </p>
@@ -256,14 +256,14 @@ export const Project05Card = ({ id }) => {
 
 export const Project06Card = ({ id }) => {
   return (
-    <DisplayCard id={id} bgColor="bg-blue-500" audioSrc={aquamanTheme}>
+    <DisplayCard id={id} bgColor="sm:bg-blue-500" audioSrc={aquamanTheme}>
       <div className="relative flex justify-evenly h-80">
         <img
           src={aquaMan}
           alt="pokemon website"
           className="absolute rounded-lg w-52 border-8 border-orange-500 z-10 -ml-40"
         />
-        <div className="absolute text-center mt-20 bg-orange-600 pl-60 py-2 rounded-xl z-0">
+        <div className="absolute text-center mt-20 bg-orange-600 pl-60 py-2 rounded-xl z-0 hidden sm:block">
           <h3 className="text-xl font-bold">Abilities</h3>
           <div className="text-white w-52">
             <p>Super Strength</p>
@@ -275,13 +275,13 @@ export const Project06Card = ({ id }) => {
         </div>
       </div>
       <div className="pt-4 flex flex-col gap-y-3">
-        <h3 className=" text-white text-center text-xl font-bold bg-zinc-600 px-5 py-2 rounded-xl mx-auto">
+        <h3 className=" text-white text-center text-xl font-bold bg-zinc-600 px-5 py-2 rounded-xl mx-auto hidden sm:block">
           Original Name
           <span className="text-black bg-zinc-100 px-3 py-1 rounded-lg ml-2">
             Arthur Curry
           </span>
         </h3>
-        <p className="text-center text-base bg-blue-200 px-2 py-5 rounded-xl">
+        <p className="text-center text-base bg-blue-200 px-2 py-5 rounded-xl hidden sm:block">
           The King of Atlantis with the ability to communicate with marine life
           and control water.
         </p>
