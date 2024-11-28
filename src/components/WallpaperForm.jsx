@@ -61,7 +61,7 @@ const WallpaperForm = () => {
       </p>
       <form
         onSubmit={handleUpload}
-        className="w-[30%] mx-auto bg-[#c3c3c3] border-4 border-[#00a2e8] py-5 flex flex-col gap-5 rounded-xl mt-5"
+        className="w-[90%] sm:w-[30%] mx-auto bg-[#c3c3c3] border-4 border-[#00a2e8] py-5 flex flex-col gap-5 rounded-xl mt-5"
       >
         <input type="file" accept="image/*" onChange={handleFileUpload} className="mx-auto bg-white"/>
         <button
