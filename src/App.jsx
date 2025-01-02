@@ -45,15 +45,15 @@ function App() {
               &times;
             </button>
             <div className="text-center">
-              <h4>👋 Hi! I'm Ajithkumar, the developer of this website.</h4>
-              <p>
+              <h4 className="text-black">👋 Hi! I'm Ajithkumar, the developer of this website.</h4>
+              <p className="text-black">
                 For the best experience,
                 <span className="text-blue-500 font-semibold">
                   I recommend visiting this website on a desktop screen with volume turned up.
                 </span>
               </p>
-              <p>Thanks for visiting and understanding!</p>
-              <p className="text-xs text-end mt-5">
+              <p className="text-black">Thanks for visiting and understanding!</p>
+              <p className="text-xs text-end mt-5 text-black">
                 Press
                 <span className="inline-block px-1 py-0.5 border border-gray-300 rounded bg-gray-200 shadow-sm font-mono mx-1">
                   Esc
